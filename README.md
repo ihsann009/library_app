@@ -15,3 +15,10 @@
 | PUT         | /api/staff/:id                    | Update staff (**admin**)                      |
 | DELETE      | /api/staff/:id                    | Hapus staff (**admin**)                       |
 | GET         | /api/admin/peminjaman-terlambat   | Lihat peminjaman terlambat (**admin/staff**)  |
+
+## GG
+| Jenis Pengujian | Jumlah Test | Berhasil | Gagal | Catatan |
+|-----------------|-------------|-----------|--------|----------|
+| Component Test | 15 | 14 | 1 | 1 test gagal pada validasi input |
+| Integration Test | 10 | 10 | 0 | Semua integrasi berjalan baik |
+| System Testing | 20 | 19 | 1 | 1 test gagal pada edge case peminjaman |
