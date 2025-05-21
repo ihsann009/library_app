@@ -24,8 +24,7 @@
 | System Testing | 20 | 19 | 1 | 1 test gagal pada edge case peminjaman |
 
 
-## TESS
-
+## Test Case
 | No | Fitur | Endpoint | Method | Role | Input | Expected Output | Status |
 |----|-------|-----------|---------|------|--------|-----------------|---------|
 | 1 | Login | /api/auth/login | POST | - | {username: "admin", password: "admin123"} | {token: "jwt_token", user: {id, username, role}} | Pass |
@@ -58,7 +57,7 @@
 | 28 | Access Without Token | /api/books | GET | - | - | 401 Unauthorized | Pass |
 | 29 | Access With Invalid Token | /api/books | GET | - | token: "invalid" | 403 Forbidden | Pass |
 | 30 | Access Wrong Role | /api/staff | GET | mahasiswa | valid_token | 403 Forbidden | Pass |
-Test Case untuk Edge Cases
+## Test Case untuk Edge Cases
 | No | Scenario | Input | Expected Output | Status |
 |----|----------|--------|-----------------|---------|
 | 1 | Peminjaman Buku Habis | {id_buku: "out_of_stock"} | {message: "Stok buku habis"} | Pass |
@@ -66,7 +65,7 @@ Test Case untuk Edge Cases
 | 3 | Pengembalian Buku Rusak | {id_peminjaman, kondisi: "rusak"} | {message: "Denda dikenakan"} | Pass |
 | 4 | Update Stok Negatif | {stok: -1} | {message: "Stok tidak valid"} | Pass |
 | 5 | Register Invalid Phone | {no_tel_mahasiswa: "invalid"} | {message: "Nomor telepon tidak valid"} | Pass |
-Test Case untuk Validasi Input
+## Test Case untuk Validasi Input
 | No | Field | Invalid Input | Expected Output | Status |
 |----|-------|---------------|-----------------|---------|
 | 1 | Username | "" | {message: "Username required"} | Pass |
@@ -82,12 +81,5 @@ Test Case untuk Error Handling
 | 3 | Invalid JSON | Return 400 with parse error | Pass |
 | 4 | Missing Required Fields | Return 400 with validation error | Pass |
 | 5 | Server Error | Return 500 with generic error | Pass |
-Semua test case ini mencakup:
-Happy path testing
-Error handling
-Input validation
-Role-based access
-Edge cases
-Business logic validation
-Security testing
+
 
